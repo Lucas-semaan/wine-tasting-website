@@ -1,0 +1,29 @@
+---
+import { site } from "../data/site";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section class="section awards" id="palmares" aria-labelledby="awards-title">
+  <div class="awards-heading reveal" id="awards-title">
+    <SectionHeading eyebrow={site.awardsIntro.eyebrow} title={site.awardsIntro.title} description={site.awardsIntro.description} />
+  </div>
+  <div class="awards-layout">
+    <div class="awards-photo reveal">
+      <img src={site.awardsIntro.image} alt={site.awardsIntro.imageAlt} loading="lazy" width="1600" height="1068" />
+    </div>
+    <ol class="awards-list">
+      {site.awards.map((award, index) => (
+        <li class="award-item reveal">
+          <span class="award-number">{String(index + 1).padStart(2, "0")}</span>
+          <span class="award-year">{award.year}</span>
+          <div>
+            <h3>{award.competition}</h3>
+            <p>{award.result}</p>
+            {award.team && <small>{award.team}</small>}
+            {award.distinction && <small>{award.distinction}</small>}
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

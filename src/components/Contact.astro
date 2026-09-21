@@ -1,0 +1,27 @@
+---
+import { site } from "../data/site";
+
+const isPlaceholder = (value: string) => value.startsWith("[");
+const emailHref = isPlaceholder(site.contact.email) ? undefined : `mailto:${site.contact.email}`;
+const phoneHref = isPlaceholder(site.contact.phone) ? undefined : `tel:${site.contact.phone.replace(/\s/g, "")}`;
+const instagramHref = isPlaceholder(site.contact.instagram) ? undefined : site.contact.instagram;
+const linkedinHref = isPlaceholder(site.contact.linkedin) ? undefined : site.contact.linkedin;
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="section contact-inner">
+    <p class="eyebrow reveal">{site.contact.eyebrow}</p>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 id="contact-title">{site.contact.title}</h2>
+        <p>{site.contact.description}</p>
+      </div>
+      <address class="contact-links reveal">
+        <div><span>Email</span>{emailHref ? <a href={emailHref}>{site.contact.email}</a> : <strong>{site.contact.email}</strong>}</div>
+        <div><span>Téléphone</span>{phoneHref ? <a href={phoneHref}>{site.contact.phone}</a> : <strong>{site.contact.phone}</strong>}</div>
+        <div><span>Instagram</span>{instagramHref ? <a href={instagramHref} target="_blank" rel="noreferrer">{site.contact.instagram}</a> : <strong>{site.contact.instagram}</strong>}</div>
+        <div><span>LinkedIn</span>{linkedinHref ? <a href={linkedinHref} target="_blank" rel="noreferrer">{site.contact.linkedin}</a> : <strong>{site.contact.linkedin}</strong>}</div>
+      </address>
+    </div>
+  </div>
+</section>

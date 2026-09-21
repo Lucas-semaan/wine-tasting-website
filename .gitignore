@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.sites-runtime/
+.DS_Store
+
+# Fichiers photo bruts conservés localement ; les images utilisées sont dans public/images.
+WhatsApp Image *.jpeg
+WhatsApp Video *.mp4
+SFD_*.jpg

@@ -1,0 +1,31 @@
+---
+import { site } from "../data/site";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section class="section services" id="prestations" aria-labelledby="services-title">
+  <div class="services-intro reveal" id="services-title">
+    <SectionHeading eyebrow={site.servicesIntro.eyebrow} title={site.servicesIntro.title} description={site.servicesIntro.description} />
+    <p class="starting-price">{site.servicesIntro.startingPrice}</p>
+  </div>
+  <div class="services-grid">
+    {site.services.map((service, index) => (
+      <article class="service-card reveal">
+        <div class="service-image-wrap">
+          <img src={service.image} alt={service.imageAlt} loading="lazy" width="1600" height="1200" />
+          <span>{String(index + 1).padStart(2, "0")}</span>
+        </div>
+        <div class="service-content">
+          <div class="tag-list" aria-label="Catégories">{service.tags.map((tag) => <span>{tag}</span>)}</div>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <dl class="service-details">
+            <div><dt>Durée</dt><dd>{service.duration}</dd></div>
+            <div><dt>Participants</dt><dd>{service.participants}</dd></div>
+            <div><dt>Tarif</dt><dd>{service.price}</dd></div>
+          </dl>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <img class="hero-image" src={site.hero.image} alt={site.hero.imageAlt} fetchpriority="high" />
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="eyebrow">{site.hero.eyebrow}</p>
+    <h1 id="hero-title"><span>{site.identity.name}</span>{site.hero.title}</h1>
+    <p class="hero-statement">{site.hero.statement}</p>
+    <p class="hero-description">{site.hero.description}</p>
+    <div class="hero-actions">
+      <a class="button button-light" href="#prestations">Découvrir les prestations</a>
+      <a class="text-link" href="#contact">Échanger sur votre projet <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <p class="hero-side-note">{site.identity.role}</p>
+</section>

@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+import { site } from "../data/site";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = site.seo.title,
+  description = site.seo.description,
+} = Astro.props;
+
+const canonical = site.seo.canonical.startsWith("http") ? site.seo.canonical : undefined;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#24382c" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

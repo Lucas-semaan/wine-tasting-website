@@ -1,0 +1,22 @@
+---
+import { site } from "../data/site";
+---
+
+<header class="site-header" data-header>
+  <a class="wordmark" href="#top" aria-label="Retour en haut de la page">
+    <span>{site.identity.name}</span>
+    <small>Œnologue</small>
+  </a>
+
+  <nav aria-label="Navigation principale">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span>Menu</span>
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <ul id="site-menu" class="site-menu">
+      {site.navigation.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,27 @@
+---
+import { site } from "../data/site";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section class="tastings" id="degustations" aria-labelledby="tastings-title">
+  <div class="section tastings-inner">
+    <div class="reveal" id="tastings-title">
+      <SectionHeading eyebrow={site.tastingsIntro.eyebrow} title={site.tastingsIntro.title} description={site.tastingsIntro.description} light />
+    </div>
+    <div class="tastings-grid">
+      {site.tastings.map((tasting, index) => (
+        <article class:list={["tasting-card", `tasting-card-${index + 1}`, "reveal"]}>
+          <img src={tasting.image} alt={tasting.imageAlt} loading="lazy" width="1600" height="1200" />
+          <div class="tasting-overlay"></div>
+          <div class="tasting-content">
+            <p>{tasting.date ?? "[DATE OPTIONNELLE]"}</p>
+            <h3>{tasting.title}</h3>
+            <span>{tasting.theme}</span>
+            <p class="tasting-comment">{tasting.comment}</p>
+            {tasting.wines && <ul aria-label="Vins de la dégustation">{tasting.wines.map((wine) => <li>{wine}</li>)}</ul>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

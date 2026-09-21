@@ -1,0 +1,20 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="expertise" aria-labelledby="expertise-title">
+  <div class="expertise-image" aria-hidden="true"></div>
+  <div class="section expertise-inner">
+    <p class="eyebrow reveal">Trois regards, une même matière</p>
+    <h2 class="sr-only" id="expertise-title">Expertise</h2>
+    <div class="expertise-list">
+      {site.expertise.map((item, index) => (
+        <article class="expertise-item reveal">
+          <span>0{index + 1}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
