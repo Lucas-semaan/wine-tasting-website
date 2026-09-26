@@ -12,6 +12,20 @@ import SectionHeading from "./SectionHeading.astro";
     <SectionHeading eyebrow={site.about.eyebrow} title={site.about.title} />
     <p class="about-role" id="about-title">{site.about.role}</p>
     <p class="lead-copy">{site.about.biography}</p>
-    <p class="philosophy-copy">{site.about.philosophy}</p>
+    <div class="about-perspective">
+      <p class="about-perspective-title">{site.about.philosophy.question}</p>
+      <div class="about-perspective-grid">
+        <article>
+          <span>01</span>
+          <h3>Sommelier</h3>
+          <p>{site.about.philosophy.sommelier}</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Œnologue</h3>
+          <p>{site.about.philosophy.oenologue}</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>

@@ -52,7 +52,11 @@ export const site = {
     title: "Lucas SEMAAN",
     role: "Œnologue & Sommelier privé",
     biography: "Passionné du vin et de son univers, j'ai plongé dans cet univers jusqu'à en faire mon métier.",
-    philosophy: "Œnologue ou sommelier ? Un sommelier est un connaisseur aguerri de la dégustation et du service du vin. Il connaît et reconnaît les cépages et les appellations en un clin d’œil. Un œnologue est un maître faiseur de vin : il comprend et sait accompagner le vin de la vendange à la dégustation avec une main experte.",
+    philosophy: {
+      question: "Œnologue ou sommelier ?",
+      sommelier: "Un sommelier est un connaisseur aguerri de la dégustation et du service du vin. Il connaît et reconnaît les cépages et les appellations en un clin d’œil.",
+      oenologue: "Un œnologue est un maître faiseur de vin : il comprend et sait accompagner le vin de la vendange à la dégustation avec une main experte.",
+    },
     image: "/images/lucas-degustation-portrait.jpeg",
     imageAlt: "Lucas Semaan lors d’une séance de dégustation de vins",
   },
@@ -102,7 +106,7 @@ export const site = {
     },
     {
       title: "Événements d’entreprise, EVG/EVJF...",
-      description: "Un événement sur-mesure pour toutes les occasions",
+      description: "Un événement sur-mesure pour toutes les occasions.",
       duration: "2h minimum",
       participants: "à partir de 4 personnes",
       price: "à partir de 20 euros par personne",
