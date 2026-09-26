@@ -13,13 +13,5 @@ import SectionHeading from "./SectionHeading.astro";
     <p class="about-role" id="about-title">{site.about.role}</p>
     <p class="lead-copy">{site.about.biography}</p>
     <p>{site.about.philosophy}</p>
-    <ul class="education-list">
-      {site.about.education.map((item) => <li>{item}</li>)}
-    </ul>
-  </div>
-  <div class="about-approach reveal">
-    <p class="eyebrow">{site.about.approach.eyebrow}</p>
-    <h3>{site.about.approach.title}</h3>
-    <p>{site.about.approach.description}</p>
   </div>
 </section>

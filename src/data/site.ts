@@ -53,16 +53,6 @@ export const site = {
     role: "Œnologue & Sommelier privé",
     biography: "Passionné du vin et de son univers, j'ai plongé dans cet univers jusqu'à en faire mon métier.",
     philosophy: "Oenologue vs Sommelier ? Un sommelier est un connaisseur aguerri de la dégustation et du service du vin. Il connaît et reconnaît les cépages et appellations en un clin d'oeil. Un oenologue est un maître faiseur du vin. Il comprend et sait accompagner le vin de la vendange à la dégustation avec une main experte ",
-    education: [
-      "Avec moi, vous serez accompagné d'un sommelier & d'un oenologue",
-    ],
-    approach: {
-      eyebrow: "Ma démarche",
-      title: "Partager le vin, simplement.",
-      description: "Chaque dégustation est pensée comme un moment d’échange, entre précision, curiosité et plaisir.",
-      valuesLabel: "Les piliers de la démarche",
-      values: ["Découvrir", "Comprendre", "Partager"],
-    },
     image: "/images/lucas-degustation-portrait.jpeg",
     imageAlt: "Lucas Semaan lors d’une séance de dégustation de vins",
   },
