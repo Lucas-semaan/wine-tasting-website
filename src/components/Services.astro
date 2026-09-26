@@ -16,13 +16,13 @@ import SectionHeading from "./SectionHeading.astro";
           <span>{String(index + 1).padStart(2, "0")}</span>
         </div>
         <div class="service-content">
-          <div class="tag-list" aria-label="Catégories">{service.tags.map((tag) => <span>{tag}</span>)}</div>
+          <div class="tag-list" aria-label={site.servicesIntro.labels.categories}>{service.tags.map((tag) => <span>{tag}</span>)}</div>
           <h3>{service.title}</h3>
           <p>{service.description}</p>
           <dl class="service-details">
-            <div><dt>Durée</dt><dd>{service.duration}</dd></div>
-            <div><dt>Participants</dt><dd>{service.participants}</dd></div>
-            <div><dt>Tarif</dt><dd>{service.price}</dd></div>
+            <div><dt>{site.servicesIntro.labels.duration}</dt><dd>{service.duration}</dd></div>
+            <div><dt>{site.servicesIntro.labels.participants}</dt><dd>{service.participants}</dd></div>
+            <div><dt>{site.servicesIntro.labels.price}</dt><dd>{service.price}</dd></div>
           </dl>
         </div>
       </article>

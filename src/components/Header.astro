@@ -3,12 +3,12 @@ import { site } from "../data/site";
 ---
 
 <header class="site-header" data-header>
-  <a class="wordmark" href="#top" aria-label="Retour en haut de la page">
+  <a class="wordmark" href="#top" aria-label={site.footer.backToTopLabel}>
     <span>{site.identity.name}</span>
     <small>Œnologue</small>
   </a>
 
-  <nav aria-label="Navigation principale">
+  <nav aria-label={site.navigationLabel}>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
       <span>Menu</span>
       <span class="menu-icon" aria-hidden="true"></span>

@@ -3,7 +3,7 @@ import { site } from "../data/site";
 ---
 
 <footer class="site-footer">
-  <a class="footer-mark" href="#top">{site.identity.name}</a>
+  <a class="footer-mark" href="#top" aria-label={site.footer.backToTopLabel}>{site.identity.name}</a>
   <p>{site.identity.role} · {site.identity.location}</p>
-  <a href="#top" aria-label="Retour en haut de la page">Retour en haut ↑</a>
+  <a href="#top" aria-label={site.footer.backToTopLabel}>{site.footer.backToTop} ↑</a>
 </footer>

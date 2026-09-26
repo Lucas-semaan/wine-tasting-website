@@ -1,6 +1,8 @@
 ---
-import { site } from "../data/site";
+import { site, type Tasting } from "../data/site";
 import SectionHeading from "./SectionHeading.astro";
+
+const tastings: readonly Tasting[] = site.tastings;
 ---
 
 <section class="tastings" id="degustations" aria-labelledby="tastings-title">
@@ -9,16 +11,21 @@ import SectionHeading from "./SectionHeading.astro";
       <SectionHeading eyebrow={site.tastingsIntro.eyebrow} title={site.tastingsIntro.title} description={site.tastingsIntro.description} light />
     </div>
     <div class="tastings-grid">
-      {site.tastings.map((tasting, index) => (
+      {tastings.map((tasting, index) => (
         <article class:list={["tasting-card", `tasting-card-${index + 1}`, "reveal"]}>
           <img src={tasting.image} alt={tasting.imageAlt} loading="lazy" width="1600" height="1200" />
+          {tasting.video ? (
+            <video class="tasting-video" autoplay loop muted playsinline preload="metadata" poster={tasting.image} aria-hidden="true">
+              <source src={tasting.video} type="video/mp4" />
+            </video>
+          ) : null}
           <div class="tasting-overlay"></div>
           <div class="tasting-content">
-            <p>{tasting.date ?? "[DATE OPTIONNELLE]"}</p>
+            {tasting.date && <p>{tasting.date}</p>}
             <h3>{tasting.title}</h3>
             <span>{tasting.theme}</span>
-            <p class="tasting-comment">{tasting.comment}</p>
-            {tasting.wines && <ul aria-label="Vins de la dégustation">{tasting.wines.map((wine) => <li>{wine}</li>)}</ul>}
+            {tasting.comment && <p class="tasting-comment">{tasting.comment}</p>}
+            {tasting.wines && <ul aria-label={site.tastingsIntro.winesLabel}>{tasting.wines.map((wine) => <li>{wine}</li>)}</ul>}
           </div>
         </article>
       ))}

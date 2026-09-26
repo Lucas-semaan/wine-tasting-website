@@ -17,4 +17,9 @@ import SectionHeading from "./SectionHeading.astro";
       {site.about.education.map((item) => <li>{item}</li>)}
     </ul>
   </div>
+  <div class="about-approach reveal">
+    <p class="eyebrow">{site.about.approach.eyebrow}</p>
+    <h3>{site.about.approach.title}</h3>
+    <p>{site.about.approach.description}</p>
+  </div>
 </section>
