@@ -52,7 +52,7 @@ export const site = {
     title: "Lucas SEMAAN",
     role: "Œnologue & Sommelier privé",
     biography: "Passionné du vin et de son univers, j'ai plongé dans cet univers jusqu'à en faire mon métier.",
-    philosophy: "Oenologue vs Sommelier ? Un sommelier est un connaisseur aguerri de la dégustation et du service du vin. Il connaît et reconnaît les cépages et appellations en un clin d'oeil. Un oenologue est un maître faiseur du vin. Il comprend et sait accompagner le vin de la vendange à la dégustation avec une main experte ",
+    philosophy: "Œnologue ou sommelier ? Un sommelier est un connaisseur aguerri de la dégustation et du service du vin. Il connaît et reconnaît les cépages et les appellations en un clin d’œil. Un œnologue est un maître faiseur de vin : il comprend et sait accompagner le vin de la vendange à la dégustation avec une main experte.",
     image: "/images/lucas-degustation-portrait.jpeg",
     imageAlt: "Lucas Semaan lors d’une séance de dégustation de vins",
   },
@@ -60,7 +60,7 @@ export const site = {
     eyebrow: "Exemple de moments",
     title: "Des dégustations pensées pour vous.",
     description: "Quel que soit votre moment, nous construirons ensemble le moment idéal pour vous.",
-    startingPrice: "Prestations à partir de 20 € par personne", /*attention à la mise en page pour ne pas séparer le euros du 20*/
+    startingPrice: "Prestations à partir de 20 € par personne",
     labels: {
       categories: "Catégories",
       duration: "Durée",
@@ -72,7 +72,7 @@ export const site = {
   services: [
     {
       title: "Tour des vins de France",
-      description: "Découvrons les vins blancs, rouges et rosés de nos beaux terroirs français lors d'une dégustation thématique en 4 à 12 vins",
+      description: "Découvrons les vins blancs, rouges et rosés de nos beaux terroirs français lors d'une dégustation thématique en 4 à 12 vins.",
       duration: "2h minimum",
       participants: "à partir de 4 personnes",
       price: "à partir de 20 euros par personne",
@@ -82,7 +82,7 @@ export const site = {
     },
     {
       title: "A la découverte de Meursault",
-      description: "Comprendre une couleur en profondeur et devenez capable de différencier à coup sûr différents cépages et appellation de France",
+      description: "Comprenez une couleur en profondeur et devenez capable de différencier à coup sûr différents cépages et appellations de France.",
       duration: "2h minimum",
       participants: "à partir de 4 personnes",
       price: "à partir de 20 euros par personne",
