@@ -42,6 +42,12 @@ import Footer from "../components/Footer.astro";
   });
   menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
   window.addEventListener("resize", () => { if (window.innerWidth > 760) closeMenu(); });
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && button?.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+      button.focus();
+    }
+  });
 
   const revealItems = document.querySelectorAll<HTMLElement>(".reveal");
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -56,5 +62,20 @@ import Footer from "../components/Footer.astro";
     revealItems.forEach((item) => observer.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add("is-visible"));
+  }
+
+  const tastingVideos = document.querySelectorAll<HTMLVideoElement>(".tasting-video");
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) {
+          void video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    });
+    tastingVideos.forEach((video) => videoObserver.observe(video));
   }
 </script>

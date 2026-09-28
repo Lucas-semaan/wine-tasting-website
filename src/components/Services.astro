@@ -4,8 +4,8 @@ import SectionHeading from "./SectionHeading.astro";
 ---
 
 <section class="section services" id="prestations" aria-labelledby="services-title">
-  <div class="services-intro reveal" id="services-title">
-    <SectionHeading eyebrow={site.servicesIntro.eyebrow} title={site.servicesIntro.title} description={site.servicesIntro.description} />
+  <div class="services-intro reveal">
+    <SectionHeading eyebrow={site.servicesIntro.eyebrow} title={site.servicesIntro.title} id="services-title" description={site.servicesIntro.description} />
     <p class="starting-price">{site.servicesIntro.startingPrice}</p>
   </div>
   <div class="services-grid">

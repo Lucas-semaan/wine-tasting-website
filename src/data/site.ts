@@ -25,7 +25,7 @@ export type Tasting = {
 export const site = {
   identity: {
     name: "Lucas SEMAAN",
-    role: "Œnologue & Sommelier privé",
+    role: "Œnologue et sommelier privé",
     location: "Rennes et ses environs",
   },
   navigation: [
@@ -37,9 +37,9 @@ export const site = {
   navigationLabel: "Navigation principale",
   hero: {
     eyebrow: "Sommelier privé · Rennes",
-    title: "Œnologue & Sommelier privé",
-    statement: "Venez passer un moment convivial et en apprendre plus sur le vin",
-    description: "Amateur ou confirmé, le monde du vin s'ouvre à vous",
+    title: "Sommelier privé à Rennes",
+    statement: "Partagez un moment convivial autour du vin",
+    description: "Dégustations de vin pour particuliers et entreprises à Rennes et dans ses environs.",
     actions: {
       services: "Découvrir les prestations",
       contact: "Échanger sur votre projet",
@@ -50,20 +50,15 @@ export const site = {
   about: {
     eyebrow: "À propos",
     title: "Lucas SEMAAN",
-    role: "Œnologue & Sommelier privé",
-    biography: "Passionné du vin et de son univers, j'ai plongé dans cet univers jusqu'à en faire mon métier.",
-    philosophy: {
-      question: "Œnologue ou sommelier ?",
-      sommelier: "Un sommelier est un connaisseur aguerri de la dégustation et du service du vin. Il connaît et reconnaît les cépages et les appellations en un clin d’œil.",
-      oenologue: "Un œnologue est un maître faiseur de vin : il comprend et sait accompagner le vin de la vendange à la dégustation avec une main experte.",
-    },
+    role: "Œnologue et sommelier privé",
+    biography: "Passionné par le vin, j’en ai fait mon métier. Je partage aujourd’hui cette passion à travers des dégustations conviviales, adaptées à vos envies.",
     image: "/images/lucas-degustation-portrait.jpeg",
     imageAlt: "Lucas Semaan lors d’une séance de dégustation de vins",
   },
   servicesIntro: {
-    eyebrow: "Exemple de moments",
+    eyebrow: "Prestations",
     title: "Des dégustations pensées pour vous.",
-    description: "Quel que soit votre moment, nous construirons ensemble le moment idéal pour vous.",
+    description: "Pour un moment entre proches ou un événement d’entreprise, construisons ensemble une dégustation qui vous ressemble.",
     startingPrice: "Prestations à partir de 20 € par personne",
     labels: {
       categories: "Catégories",
@@ -76,20 +71,20 @@ export const site = {
   services: [
     {
       title: "Tour des vins de France",
-      description: "Découvrons les vins blancs, rouges et rosés de nos beaux terroirs français lors d'une dégustation thématique en 4 à 12 vins.",
-      duration: "2h minimum",
+      description: "Découvrez les vins blancs, rouges et rosés de nos terroirs français lors d’une dégustation thématique de 4 à 12 vins.",
+      duration: "2 h minimum",
       participants: "à partir de 4 personnes",
-      price: "à partir de 20 euros par personne",
+      price: "à partir de 20 € par personne",
       image: "/images/service-tour-vins-france.jpeg",
       imageAlt: "Six bouteilles de vins français présentées pour une dégustation",
       tags: ["Vins", "Découverte"],
     },
     {
-      title: "A la découverte de Meursault",
-      description: "Comprenez une couleur en profondeur et devenez capable de différencier à coup sûr différents cépages et appellations de France.",
-      duration: "2h minimum",
+      title: "À la découverte de Meursault",
+      description: "Découvrez les vins de Meursault et apprenez à reconnaître ce qui distingue cette appellation de Bourgogne.",
+      duration: "2 h minimum",
       participants: "à partir de 4 personnes",
-      price: "à partir de 20 euros par personne",
+      price: "à partir de 20 € par personne",
       image: "/images/lineup-jardin.jpeg",
       imageAlt: "Sélection de bouteilles présentée en extérieur",
       tags: ["Régions", "Panorama"],
@@ -97,19 +92,19 @@ export const site = {
     {
       title: "Initiation à la dégustation à l’aveugle",
       description: "Apprenez pas à pas à déguster des vins.",
-      duration: "2h minimum",
+      duration: "2 h minimum",
       participants: "à partir de 4 personnes",
-      price: "à partir de 20 euros par personne",
+      price: "à partir de 20 € par personne",
       image: "/images/degustation-table.jpeg",
       imageAlt: "Participants concentrés pendant une dégustation à table",
       tags: ["À l’aveugle", "Initiation"],
     },
     {
-      title: "Événements d’entreprise, EVG/EVJF...",
-      description: "Un événement sur-mesure pour toutes les occasions.",
-      duration: "2h minimum",
+      title: "Événements d’entreprise, EVG et EVJF",
+      description: "Une dégustation sur mesure pour vos événements professionnels et privés.",
+      duration: "2 h minimum",
       participants: "à partir de 4 personnes",
-      price: "à partir de 20 euros par personne",
+      price: "à partir de 20 € par personne",
       image: "/images/moment-convivial.jpeg",
       imageAlt: "Groupe réuni à l’occasion d’un événement convivial",
       tags: ["Sur mesure"],
@@ -127,7 +122,7 @@ export const site = {
     {
       title: "Toutes les expressions du Chardonnay",
       date: "avril 2026",
-      theme: "Vins de Bourgognes anciens et autres",
+      theme: "Vins de Bourgogne anciens et autres vins",
       image: "/images/lineup-long.jpeg",
       imageAlt: "Long alignement de bouteilles préparées pour une dégustation",
       video: "/images/degustation-passee-01.mp4",
@@ -136,7 +131,7 @@ export const site = {
       title: "Dégustation de Meursault au pied des vignes",
       theme: "Meursault et autres vins de Bourgogne",
       image: "/images/degustation-passee-02.jpeg",
-      imageAlt: "Line-up de bouteilles de vins de Bourgogne préparées pour une dégustation",
+      imageAlt: "Alignement de bouteilles de vins de Bourgogne préparées pour une dégustation",
     },
     {
       title: "Immense horizontale de Vincent Girardin",
@@ -150,14 +145,14 @@ export const site = {
     title: "Expertise",
   },
   expertise: [
-    { title: "Œnologue", text: "Sachant faire du vin, je vous guiderai dans la compréhension de celui-ci." },
-    { title: "Ingénieur viticole", text: "Connaissant la façon de cultiver la vigne, les terroirs et les procédés à la vigne n’auront plus de mystère pour vous." },
-    { title: "Sommelier privé", text: "Amoureux de la dégustation, je vous accompagnerai dans le voyage de l’identification des vins." },
+    { title: "Œnologue", text: "Je vous aide à comprendre comment le vin est élaboré et ce qui façonne son caractère." },
+    { title: "Ingénieur viticole", text: "Je vous fais découvrir la culture de la vigne, les terroirs et les pratiques viticoles." },
+    { title: "Sommelier privé", text: "Je vous accompagne dans la découverte des vins et de leurs arômes, à votre rythme." },
   ],
   contact: {
     eyebrow: "Contact",
     title: "Imaginons votre prochaine dégustation.",
-    description: "Prestations pour particuliers et entreprises, principalement autour de Rennes.",
+    description: "Prestations pour particuliers et entreprises, sur Rennes et alentours.",
     email: "lucas.semaan@gmail.com",
     phone: "+33782188234",
     linkedin: "https://www.linkedin.com/in/lucas-semaan-2173a4209/",
@@ -173,8 +168,7 @@ export const site = {
     backToTopLabel: "Retour en haut de la page",
   },
   seo: {
-    title: "Lucas SEMAAN — Œnologue & Sommelier privé à Rennes",
-    description: "Lucas Semaan propose des dégustations de vin conviviales et sur mesure à Rennes, pour particuliers, entreprises et événements.",
-    canonical: "",
+    title: "Lucas Semaan — Sommelier privé et œnologue à Rennes",
+    description: "Lucas Semaan, sommelier privé à Rennes, propose des dégustations de vin sur mesure pour particuliers, entreprises et événements privés.",
   },
 } as const;

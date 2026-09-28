@@ -5,14 +5,42 @@ import { site } from "../data/site";
 type Props = {
   title?: string;
   description?: string;
+  robots?: string;
+  showServiceSchema?: boolean;
 };
 
 const {
   title = site.seo.title,
   description = site.seo.description,
+  robots,
+  showServiceSchema = true,
 } = Astro.props;
 
-const canonical = site.seo.canonical.startsWith("http") ? site.seo.canonical : undefined;
+const canonical = Astro.site && !robots?.includes("noindex") ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const socialImage = Astro.site ? new URL(site.hero.image, Astro.site).href : undefined;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${Astro.site}#lucas-semaan`,
+      name: site.identity.name,
+      jobTitle: site.identity.role,
+      email: site.contact.email,
+      telephone: site.contact.phone,
+      sameAs: [site.contact.linkedin],
+    },
+    {
+      "@type": "Service",
+      "@id": `${Astro.site}#sommelier-prive`,
+      name: "Sommelier privé et dégustations de vin à Rennes",
+      description: site.seo.description,
+      serviceType: "Sommelier privé et dégustation de vin",
+      areaServed: site.identity.location,
+      provider: { "@id": `${Astro.site}#lucas-semaan` },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -21,14 +49,24 @@ const canonical = site.seo.canonical.startsWith("http") ? site.seo.canonical : u
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
     <meta name="theme-color" content="#24382c" />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && <meta property="og:image:alt" content={site.hero.imageAlt} />}
+    <meta name="twitter:card" content="summary_large_image" />
     {canonical && <link rel="canonical" href={canonical} />}
+    {Astro.site && <link rel="sitemap" href="/sitemap-index.xml" />}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    {showServiceSchema && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    <script is:inline>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <slot />

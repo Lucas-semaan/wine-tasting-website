@@ -1,10 +1,10 @@
 ---
-type Props = { eyebrow: string; title: string; description?: string; light?: boolean };
-const { eyebrow, title, description, light = false } = Astro.props;
+type Props = { eyebrow: string; title: string; id?: string; description?: string; light?: boolean };
+const { eyebrow, title, id, description, light = false } = Astro.props;
 ---
 
 <header class:list={["section-heading", { "section-heading-light": light }]}>
   <p class="eyebrow">{eyebrow}</p>
-  <h2>{title}</h2>
+  <h2 id={id}>{title}</h2>
   {description && <p class="section-intro">{description}</p>}
 </header>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page introuvable — Lucas Semaan, sommelier privé à Rennes"
+  description="Cette page n’existe pas. Retrouvez les prestations de Lucas Semaan, sommelier privé à Rennes."
+  robots="noindex, follow"
+  showServiceSchema={false}
+>
+  <main class="not-found">
+    <p class="eyebrow">Erreur 404</p>
+    <h1>Page introuvable</h1>
+    <p>La page demandée n’existe pas ou a été déplacée.</p>
+    <a class="button" href="/">Retour à l’accueil</a>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found { align-items: flex-start; display: flex; flex-direction: column; justify-content: center; min-height: 100svh; padding: clamp(2rem, 7vw, 8rem); }
+  h1 { font-family: var(--serif); font-size: clamp(3rem, 7vw, 6rem); font-weight: 400; line-height: 1; margin: 0; }
+  .not-found > p:not(.eyebrow) { margin: 2rem 0; }
+  .button { background: var(--vine); color: var(--white); }
+</style>

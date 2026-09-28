@@ -7,15 +7,15 @@ const tastings: readonly Tasting[] = site.tastings;
 
 <section class="tastings" id="degustations" aria-labelledby="tastings-title">
   <div class="section tastings-inner">
-    <div class="reveal" id="tastings-title">
-      <SectionHeading eyebrow={site.tastingsIntro.eyebrow} title={site.tastingsIntro.title} description={site.tastingsIntro.description} light />
+    <div class="reveal">
+      <SectionHeading eyebrow={site.tastingsIntro.eyebrow} title={site.tastingsIntro.title} id="tastings-title" description={site.tastingsIntro.description} light />
     </div>
     <div class="tastings-grid">
       {tastings.map((tasting, index) => (
         <article class:list={["tasting-card", `tasting-card-${index + 1}`, "reveal"]}>
           <img src={tasting.image} alt={tasting.imageAlt} loading="lazy" width="1600" height="1200" />
           {tasting.video ? (
-            <video class="tasting-video" autoplay loop muted playsinline preload="metadata" poster={tasting.image} aria-hidden="true">
+            <video class="tasting-video" loop muted playsinline preload="none" poster={tasting.image} aria-hidden="true">
               <source src={tasting.video} type="video/mp4" />
             </video>
           ) : null}
